@@ -1,8 +1,14 @@
 :root {
-    --track-height: 15px;
+    --track-height: 10px;
     --track-width: 200px;
-    --thumb-color: #ddd;
-    --track-color: #888;
+    --track-color: #dedede;
+    --thumb-color: #9e9e9e;
+    --button-color: #dedede;
+    --buttontext-color: #7d7d7d;
+    --hover-color: whitesmoke;
+    --delete-color: #ffa8b7;
+    --deletehover-color: pink;
+    --deletetext-color: Red;
 }
 
 body {
@@ -14,20 +20,23 @@ body {
 }
 
 #container {
-    padding: 20px;
     height: 100%;
+    width: 100%;
     box-sizing: border-box;
 }
 
 textarea {
-    width: 100%;
-    height: 100%;
-    border: none;
-    outline: none;
+    float: left;  /* Added from the provided code */
+    width: 100%;  /* Adjusted from the provided code */
+    height: 100%;  /* Adjusted from the provided code */
     font-size: 20px;
     resize: none;
+    padding: 40px;  /* Adjusted from the provided code */
+    border: none;
+    outline: none;
     box-sizing: border-box;
 }
+
 
 textarea:focus {
     outline: none;
@@ -36,11 +45,11 @@ textarea:focus {
 input[type=range] {
     position: fixed;
     bottom: var(--track-height);
-    right: var(--track-height);
+    right: calc(var(--track-height) * 2);
     width: var(--track-width);
     -webkit-appearance: none;
     appearance: none;
-    background: var(--thumb-color);
+    background: var(--track-color);
     border-radius: calc(var(--track-height) / 2);
     outline: none;
 }
@@ -50,7 +59,7 @@ input[type=range]::-webkit-slider-thumb {
     appearance: none;
     width: var(--track-height);
     height: var(--track-height);
-    background: var(--track-color);
+    background: var(--thumb-color);
     border-radius: 50%;
     cursor: pointer;
 }
@@ -58,7 +67,7 @@ input[type=range]::-webkit-slider-thumb {
 input[type=range]::-moz-range-thumb {
     width: var(--track-height);
     height: var(--track-height);
-    background: var(--track-color);
+    background: var(--thumb-color);
     border-radius: 50%;
     cursor: pointer;
 }
@@ -72,37 +81,44 @@ input[type=range]::-moz-range-thumb {
 }
 
 #buttonContainer button {
-    background-color: #f0f0f0;
+    background-color: var(--button-color);
     border-radius: 8px;
     padding: 10px;  /* Updated padding to enlarge clickable area */
     font-size: 16px;
     cursor: pointer;
-   /* transition: background-color 0.3s, color 0.3s; */
-    color: #333;
+    transition: background-color 0.5s, color 0.5s;
+    color: var(--buttontext-color);
     width: 40px;
-    height: 40px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 0px;
+    border: 1.5px solid whitesmoke;
 }
 
 
 #buttonContainer button:hover {
-    background-color: #e0e0e0;
+    background-color: var(--hover-color);
+    border: 1.5px solid whitesmoke;
 }
 
 #buttonContainer .delete-mode {
-    border: 0px;  /* Add a red border */
-    color: red;  /* Change text color to red */
-    background-color: pink;
+    color: var(--deletetext-color);
+    background-color: var(--delete-color);
 }
 
 #buttonContainer .delete-mode:hover {
-    background-color: pink;
+    background-color: var(--deletehover-color);
 }
 
-#addButton {
-    background-color: #333;
-    color: #fff;
+#controlsContainer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 15px);
+    height: 120px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255,0.97) 20%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
 }

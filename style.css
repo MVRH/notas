@@ -1,3 +1,14 @@
+:root {
+    --track-height: 15px;
+    --track-width: 200px;
+    --thumb-color: #ddd;
+    --track-color: #888;
+}
+      
+      /* var(--track-height) */
+      /* calc(var(--track-height) / 2); */
+      
+      
       body {
     font-family: Arial, sans-serif;
     padding: 20px;
@@ -12,37 +23,37 @@ textarea {
       font-size: 20px; /* Set the font size to 20 pixels */
 }
 
+
 textarea:focus {
     outline: none; /* This ensures the outline remains hidden when focused */
 }
 
 input[type=range] {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 200px;
-    height: 15px;  /* Set height of the track */
+    bottom: var(--track-height);
+    right: var(--track-height);
+    width: var(--track-width);
     -webkit-appearance: none;  /* Override default appearance */
     appearance: none;
-    background: #ddd;  /* Light grey background */
-    border-radius: 50%;  /* Rounded corners */
+  background: var(--thumb-color);  /* Light grey background */
+    border-radius: calc(var(--track-height) / 2);  /* Rounded corners */
     outline: none;  /* Remove outline */
 }
 
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;  /* Override default appearance */
     appearance: none;
-    width: 15px;  /* Set thumb width */
-    height: 15px;  /* Set thumb height */
-    background: #888;  /* Darker grey thumb */
+    width: var(--track-height);  /* Set thumb width */
+    height: var(--track-height);  /* Set thumb height */
+   background: var(--track-color);  /* Darker grey thumb */
     border-radius: 50%;  /* Circular thumb */
     cursor: pointer;  /* Cursor changes to pointer when hovering over thumb */
 }
 
 input[type=range]::-moz-range-thumb {
-    width: 15px;  /* Set thumb width */
-    height: 15px;  /* Set thumb height */
-    background: #888;  /* Darker grey thumb */
+    width: var(--track-height);  /* Set thumb width */
+    height: var(--track-height);  /* Set thumb height */
+    background: var(--track-color);  /* Darker grey thumb */
     border-radius: 50%;  /* Circular thumb */
     cursor: pointer;  /* Cursor changes to pointer when hovering over thumb */
 }

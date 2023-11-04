@@ -36,6 +36,7 @@ textarea {
     border: none;
     outline: none;
     box-sizing: border-box;
+    line-height:1.3em;
 }
 
 textarea:focus {

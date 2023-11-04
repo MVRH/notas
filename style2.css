@@ -28,7 +28,7 @@ body {
 textarea {
     float: left;  /* Added from the provided code */
     width: 100%;  /* Adjusted from the provided code */
-    height: 100%;  /* Adjusted from the provided code */
+    height: calc(100% - 40px);  /* Adjusted from the provided code */
     font-size: 20px;
     resize: none;
     padding: 40px;  /* Adjusted from the provided code */
@@ -36,7 +36,6 @@ textarea {
     outline: none;
     box-sizing: border-box;
 }
-
 
 textarea:focus {
     outline: none;
@@ -115,7 +114,8 @@ input[type=range]::-moz-range-thumb {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: calc(100% - 15px);
+    width:100%;
+    /* width: calc(100% - 15px); */
     height: 120px;
     background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255,0.97) 20%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
     box-sizing: border-box;

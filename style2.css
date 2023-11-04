@@ -1,0 +1,91 @@
+:root {
+    --track-height: 15px;
+    --track-width: 200px;
+    --thumb-color: #ddd;
+    --track-color: #888;
+}
+      
+      /* var(--track-height) */
+      /* calc(var(--track-height) / 2); */
+
+      
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;  /* Ensure body takes up full viewport height */
+    box-sizing: border-box;  /* Ensure padding is included in element dimensions */
+}
+
+#container {
+    padding: 20px;  /* Set padding */
+    height: 100%;  /* Ensure container takes up full height of body */
+    box-sizing: border-box;  /* Ensure padding is included in element dimensions */
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    resize: none;
+    box-sizing: border-box;  /* Ensure padding and border are included in element dimensions */
+}
+
+textarea:focus {
+    outline: none; /* This ensures the outline remains hidden when focused */
+}
+
+input[type=range] {
+    position: fixed;
+    bottom: var(--track-height);
+    right: var(--track-height);
+    width: var(--track-width);
+    -webkit-appearance: none;  /* Override default appearance */
+    appearance: none;
+  background: var(--thumb-color);  /* Light grey background */
+    border-radius: calc(var(--track-height) / 2);  /* Rounded corners */
+    outline: none;  /* Remove outline */
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;  /* Override default appearance */
+    appearance: none;
+    width: var(--track-height);  /* Set thumb width */
+    height: var(--track-height);  /* Set thumb height */
+   background: var(--track-color);  /* Darker grey thumb */
+    border-radius: 50%;  /* Circular thumb */
+    cursor: pointer;  /* Cursor changes to pointer when hovering over thumb */
+}
+
+input[type=range]::-moz-range-thumb {
+    width: var(--track-height);  /* Set thumb width */
+    height: var(--track-height);  /* Set thumb height */
+    background: var(--track-color);  /* Darker grey thumb */
+    border-radius: 50%;  /* Circular thumb */
+    cursor: pointer;  /* Cursor changes to pointer when hovering over thumb */
+}
+
+
+#buttonContainer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;  /* Space between buttons */
+}
+
+#buttonContainer button {
+    background-color: #f0f0f0;  /* Light grey background */
+    border: none;
+    border-radius: 8px;  /* Rounded corners */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;  /* Smooth color transition */
+}
+
+#buttonContainer button:hover {
+    background-color: #e0e0e0;  /* Slightly darker grey on hover */
+}

@@ -30,7 +30,7 @@ textarea {
     float: left;  /* Added from the provided code */
     width: 100%;  /* Adjusted from the provided code */
     height: calc(100% - 40px);  /* Adjusted from the provided code */
-    font-size: 20px;
+    font-size: 1em;
     resize: none;
     padding: 40px;  /* Adjusted from the provided code */
     border: none;

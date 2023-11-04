@@ -124,5 +124,3 @@ function loadFontSize() {
         document.getElementById('fontSizeSlider').value = savedFontSize;  // Set the slider value
     }
 }
-
-

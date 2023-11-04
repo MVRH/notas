@@ -44,7 +44,7 @@ textarea:focus {
 input[type=range] {
     position: fixed;
     bottom: var(--track-height);
-    right: calc(var(--track-height) * 2);
+    right: var(--track-height);
     width: var(--track-width);
     -webkit-appearance: none;
     appearance: none;
@@ -114,8 +114,7 @@ input[type=range]::-moz-range-thumb {
     position: fixed;
     bottom: 0;
     left: 0;
-    width:100%;
-    /* width: calc(100% - 15px); */
+    width:100%;  /* calc(100% - 15px); */
     height: 120px;
     background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255,0.97) 20%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
     box-sizing: border-box;

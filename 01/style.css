@@ -1,40 +1,47 @@
 :root {
-    --track-height: 15px;
+    --track-height: 10px;
     --track-width: 200px;
-    --thumb-color: #ddd;
-    --track-color: #888;
+    --track-color: #dedede;
+    --thumb-color: #9e9e9e;
+    --button-color: #dedede;
+    --buttontext-color: #7d7d7d;
+    --hover-color: whitesmoke;
+     --link-blue: #007BFF;
+    --delete-color: #ffa8b7;
+    --deletehover-color: pink;
+    --deletetext-color: Red;
 }
-      
-      /* var(--track-height) */
-      /* calc(var(--track-height) / 2); */
 
-      
 body {
-    font-family: Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif; 
+    font-size: 23.4px; 
     margin: 0;
     padding: 0;
-    height: 100vh;  /* Ensure body takes up full viewport height */
-    box-sizing: border-box;  /* Ensure padding is included in element dimensions */
+    height: 100vh;
+    box-sizing: border-box;
 }
 
 #container {
-    padding: 20px;  /* Set padding */
-    height: 100%;  /* Ensure container takes up full height of body */
-    box-sizing: border-box;  /* Ensure padding is included in element dimensions */
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 textarea {
-    width: 100%;
-    height: 100%;
+    float: left;  /* Added from the provided code */
+    width: 100%;  /* Adjusted from the provided code */
+    height: calc(100% - 40px);  /* Adjusted from the provided code */
+    font-size: 1em;
+    resize: none;
+    padding: 40px;  /* Adjusted from the provided code */
     border: none;
     outline: none;
-    font-size: 20px;
-    resize: none;
-    box-sizing: border-box;  /* Ensure padding and border are included in element dimensions */
+    box-sizing: border-box;
+    line-height:1.3em;
 }
 
 textarea:focus {
-    outline: none; /* This ensures the outline remains hidden when focused */
+    outline: none;
 }
 
 input[type=range] {
@@ -42,27 +49,147 @@ input[type=range] {
     bottom: var(--track-height);
     right: var(--track-height);
     width: var(--track-width);
-    -webkit-appearance: none;  /* Override default appearance */
+    -webkit-appearance: none;
     appearance: none;
-  background: var(--thumb-color);  /* Light grey background */
-    border-radius: calc(var(--track-height) / 2);  /* Rounded corners */
-    outline: none;  /* Remove outline */
+    background: var(--track-color);
+    border-radius: calc(var(--track-height) / 2);
+    outline: none;
 }
 
 input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;  /* Override default appearance */
+    -webkit-appearance: none;
     appearance: none;
-    width: var(--track-height);  /* Set thumb width */
-    height: var(--track-height);  /* Set thumb height */
-   background: var(--track-color);  /* Darker grey thumb */
-    border-radius: 50%;  /* Circular thumb */
-    cursor: pointer;  /* Cursor changes to pointer when hovering over thumb */
+    width: var(--track-height);
+    height: var(--track-height);
+    background: var(--thumb-color);
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 input[type=range]::-moz-range-thumb {
-    width: var(--track-height);  /* Set thumb width */
-    height: var(--track-height);  /* Set thumb height */
-    background: var(--track-color);  /* Darker grey thumb */
-    border-radius: 50%;  /* Circular thumb */
-    cursor: pointer;  /* Cursor changes to pointer when hovering over thumb */
+    width: var(--track-height);
+    height: var(--track-height);
+    background: var(--thumb-color);
+    border-radius: 50%;
+    cursor: pointer;
 }
+
+
+
+#buttonContainer {
+    position: fixed;
+    bottom: var(--track-height);
+    left: var(--track-height);
+    display: flex;
+    gap: 5px;
+}
+
+#buttonContainer button {
+    background-color: var(--button-color);
+    border-radius: 8px;
+    padding: 10px;  /* Updated padding to enlarge clickable area */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
+    color: var(--buttontext-color);
+    width: 40px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid whitesmoke;
+}
+
+
+#buttonContainer button:hover {
+    background-color: var(--hover-color);
+    border: 1.5px solid whitesmoke;
+}
+
+#buttonContainer .delete-mode {
+    color: var(--deletetext-color);
+    background-color: var(--delete-color);
+}
+
+#buttonContainer .delete-mode:hover {
+    background-color: var(--deletehover-color);
+}
+
+#controlsContainer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 20px); 
+    height: 100px;
+    background: linear-gradient(to top, rgba(255, 255, 255,1) 40%, rgba(255, 255, 255,0.9) 50%, rgba(255, 255, 255, 0) 100%);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+#noteArea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    resize: none;
+    padding: 40px; /* Ajusta según sea necesario */
+    box-sizing: border-box;
+    overflow: auto; /* Para manejar el desbordamiento de texto */
+    font-family:monospace;
+}
+
+#noteArea:focus {
+    outline: none;
+}
+
+
+#linkButtonContainer {
+    position: fixed;
+    top: var(--track-height);
+    right: var(--track-height);
+    /* Añade estilos adicionales según sea necesario */
+}
+#linkButton {
+    background-color: var(--button-color);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
+    color: var(--buttontext-color);
+    width: 40px; /* o el ancho que prefieras para que coincida con los otros botones */
+    height: 40px; /* o la altura que prefieras para que coincida con los otros botones */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid whitesmoke;
+    /* Asegúrate de que el botón no tenga margen o borde adicional que pueda desajustar su alineación */
+    margin: 0;
+    border: none;
+}
+
+#linkButton:hover {
+    background-color: var(--hover-color);
+    border: 1.5px solid whitesmoke;
+}
+
+/* Para el ícono dentro del botón, si necesitas ajustar la alineación o el tamaño */
+#linkButton .fa {
+    /* Ajustes de alineación o tamaño aquí si es necesario */
+}
+
+/* Estado activo del botón de enlace */
+#linkButton.active {
+    background-color: var(--link-blue); 
+    color: white; /* Texto en blanco para un buen contraste */
+    border: 0px;
+}
+
+/* Añade también estilos para cuando el ratón pasa por encima del botón activo si lo deseas */
+#linkButton.active:hover {
+    background-color: var(--link-blue);
+    border: 0px;
+}
+

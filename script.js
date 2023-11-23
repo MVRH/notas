@@ -11,10 +11,7 @@ window.onload = function() {
     document.getElementById('noteArea').oninput = saveNote;
     document.getElementById('fontSizeSlider').oninput = updateFontSize;
     document.getElementById('linkButton').addEventListener('click', toggleLinks);
-    document.getElementById('clearTextButton').addEventListener('click', clearText);
 };
-
-
 
 // Función para guardar la nota actual
 function saveNote() {
@@ -70,12 +67,4 @@ function toggleLinks() {
         linkButton.classList.remove('active');
     }
 }
-
-// Función para limpiar el área de notas
-function clearText() {
-    var noteArea = document.getElementById('noteArea');
-    noteArea.innerHTML = ''; // Limpia el contenido
-    saveNote(); // Guarda el cambio en localStorage, si deseas mantener la nota vacía como el estado guardado
-}
-
 

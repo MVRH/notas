@@ -11,7 +11,9 @@ window.onload = function() {
     document.getElementById('noteArea').oninput = saveNote;
     document.getElementById('fontSizeSlider').oninput = updateFontSize;
     document.getElementById('linkButton').addEventListener('click', toggleLinks);
+     document.getElementById('clearTextButton').addEventListener('click', clearText);
 };
+   
 
 
 // Función para guardar la nota actual
@@ -76,10 +78,4 @@ function clearText() {
     saveNote(); // Guarda el cambio en localStorage, si deseas mantener la nota vacía como el estado guardado
 }
 
-// Añadir el manejador de eventos al nuevo botón
-window.onload = function() {
-    // ... Resto del código de inicialización ...
 
-    // Añade el evento al nuevo botón de limpieza
-    document.getElementById('clearTextButton').addEventListener('click', clearText);
-};

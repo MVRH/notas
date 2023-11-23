@@ -154,4 +154,3 @@ function setLinkEvents() {
 }
 
 document.getElementById('linkButton').addEventListener('click', toggleLinks);
-

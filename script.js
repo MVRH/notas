@@ -11,8 +11,9 @@ window.onload = function() {
     document.getElementById('noteArea').oninput = saveNote;
     document.getElementById('fontSizeSlider').oninput = updateFontSize;
     document.getElementById('linkButton').addEventListener('click', toggleLinks);
-};
     document.getElementById('clearTextButton').addEventListener('click', clearText);
+};
+
 
 
 // Función para guardar la nota actual

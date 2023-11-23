@@ -69,10 +69,3 @@ function toggleLinks() {
     linkButton.classList.remove('active');
   }
 }
-
-// Función para limpiar el área de notas
-function clearText() {
-  var noteArea = document.getElementById('noteArea');
-  noteArea.innerHTML = ''; // Limpia el contenido
-  saveNote(); // Guarda el cambio en localStorage, si deseas mantener la nota vacía como el estado guardado
-}

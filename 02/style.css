@@ -6,6 +6,7 @@
     --button-color: #dedede;
     --buttontext-color: #7d7d7d;
     --hover-color: whitesmoke;
+    --link-blue: #007BFF;
     --delete-color: #ffa8b7;
     --deletehover-color: pink;
     --deletetext-color: Red;
@@ -73,6 +74,8 @@ input[type=range]::-moz-range-thumb {
     cursor: pointer;
 }
 
+
+
 #buttonContainer {
     position: fixed;
     bottom: var(--track-height);
@@ -123,3 +126,70 @@ input[type=range]::-moz-range-thumb {
     display: flex;
     align-items: center;
 }
+
+#noteArea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    resize: none;
+    padding: 40px; /* Ajusta según sea necesario */
+    box-sizing: border-box;
+    overflow: auto; /* Para manejar el desbordamiento de texto */
+    font-family:monospace;
+}
+
+#noteArea:focus {
+    outline: none;
+}
+
+
+#linkButtonContainer {
+    position: fixed;
+    top: var(--track-height);
+    right: var(--track-height);
+    /* Añade estilos adicionales según sea necesario */
+}
+#linkButton {
+    background-color: var(--button-color);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
+    color: var(--buttontext-color);
+    width: 40px; /* o el ancho que prefieras para que coincida con los otros botones */
+    height: 40px; /* o la altura que prefieras para que coincida con los otros botones */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid whitesmoke;
+    /* Asegúrate de que el botón no tenga margen o borde adicional que pueda desajustar su alineación */
+    margin: 0;
+    border: none;
+}
+
+#linkButton:hover {
+    background-color: var(--hover-color);
+    border: 1.5px solid whitesmoke;
+}
+
+/* Para el ícono dentro del botón, si necesitas ajustar la alineación o el tamaño */
+#linkButton .fa {
+    /* Ajustes de alineación o tamaño aquí si es necesario */
+}
+
+/* Estado activo del botón de enlace */
+#linkButton.active {
+    background-color: var(--link-blue); 
+    color: white; /* Texto en blanco para un buen contraste */
+    border: 0px;
+}
+
+/* Añade también estilos para cuando el ratón pasa por encima del botón activo si lo deseas */
+#linkButton.active:hover {
+    background-color: var(--link-blue);
+    border: 0px;
+}
+

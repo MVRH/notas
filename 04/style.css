@@ -1,0 +1,31 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 23.4px;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+#container {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#noteArea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  resize: none;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow: auto;
+  font-family: monospace;
+}
+
+#noteArea:focus {
+  outline: none;
+}

@@ -11,6 +11,9 @@ window.onload = function() {
   document.getElementById('fontSizeSlider').oninput = updateFontSize;
   document.getElementById('linkButton').addEventListener('click', toggleLinks);
   document.getElementById('clearTextButton').addEventListener('click', clearText);
+ var noteArea = document.getElementById('noteArea');
+  noteArea.addEventListener('paste', handlePaste);
+  
 };
 
 
@@ -68,4 +71,12 @@ function toggleLinks() {
     linksActive = false;
     linkButton.classList.remove('active');
   }
+}
+
+// Función para interceptar el pegado
+
+function handlePaste(event) {
+  event.preventDefault(); // Prevenir el comportamiento predeterminado de pegado
+  var text = (event.clipboardData || window.clipboardData).getData('text/plain');
+  document.execCommand('insertText', false, text); // Inserta solo el texto plano
 }
